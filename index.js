@@ -9,7 +9,13 @@ app.get("/", (req, res) => {
     time: new Date().toISOString()
   });
 });
-
+app.get('/heartbeat', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'alurix',
+    timestamp: new Date().toISOString()
+  });
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
